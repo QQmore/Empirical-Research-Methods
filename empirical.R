@@ -56,6 +56,7 @@ t.test(mydata$Select_avatar_8, mu=4)
 
 ## Give an interpretation of the results and report the statistical results 
 ## in a small paragraph that could be included in conference paper1.
+# Lecture 7 example
 
 ###Question 7: Independent-sample t-test
 male = c()
@@ -157,6 +158,14 @@ for (i in 1:NROW(mydata)) {
 t.test(male, female)
 
 ###Question 8: Paired sample t-test
+meanMale = c()
+meanFemale = c()
+for(i in 1:NROW(mydata)) {
+  meanMale = c(meanMale, sum(mydata$Select_avatar_1[i], mydata$Select_avatar_3[i], mydata$Select_avatar_5[i], mydata$Select_avatar_7[i])/4)
+  meanFemale = c(meanFemale, sum(mydata$Select_avatar_2[i], mydata$Select_avatar_4[i], mydata$Select_avatar_6[i], mydata$Select_avatar_8[i])/4)
+}
+
+t.test(meanMale, meanFemale)
 
 ###Question 9: Man-Whitney U test
 
